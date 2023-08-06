@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+<div style = "text-align:right;
+margin:15px;">
+   <!-- <form method = "post" action = "make entry">
+    <input type="text" name= "q" value={{title}}>
+    <input style="width: 150px; background-color: #4d90fe; color: white; margin-left: 670px;" type="submit" value="save entry" >
+   </form> -->
+   <a href = "{% url 'editpage' title %}"> editpage </a>
+</div>
+
+    <h1>{{title}}</h1>
+    
+    <p>
+        {{content}}
+    </p>
+{% endblock %}

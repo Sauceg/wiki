@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+   Edit Entry 
+{% endblock %}
+
+{% block body %}
+<h1>{{title}}</h1>
+<form method = "post" action = "save new entry">
+    {% csrf_token %}
+    {{form}}
+    <input style="width: 150px; background-color: #4d90fe; color: white; margin-left: 670px;" type="submit" value="save entry"; name = 't' >
+</form>
+
+
+{% endblock %}
