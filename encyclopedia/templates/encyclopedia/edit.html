@@ -5,11 +5,24 @@
 {% endblock %}
 
 {% block body %}
-<h1>{{title}}</h1>
-<form method = "post" action = "save new entry">
+<h1 style="color:purple;
+text-shadow: 2px 2px 5px gold">{{title}}</h1>
+
+
+<form method = "post" action = "{% url 'save_new_entry' title %}">
     {% csrf_token %}
-    {{form}}
-    <input style="width: 150px; background-color: #4d90fe; color: white; margin-left: 670px;" type="submit" value="save entry"; name = 't' >
+<textarea style=" width: 95%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none" name="edit" rows="3" cols="10">
+{{content}}
+</textarea>
+    
+    <input type="submit" value="Submit">
 </form>
 
 

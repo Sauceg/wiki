@@ -15,6 +15,7 @@ h1 {
 textarea {
     height: 90vh;
     width: 80%;
+
 }
 
 .main {
@@ -36,3 +37,5 @@ textarea {
 .sidebar h2 {
     margin-top: 5px;
 }
+
+

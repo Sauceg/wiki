@@ -1,18 +1,40 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-<div style = "text-align:right;
-margin:15px;">
-   <!-- <form method = "post" action = "make entry">
-    <input type="text" name= "q" value={{title}}>
-    <input style="width: 150px; background-color: #4d90fe; color: white; margin-left: 670px;" type="submit" value="save entry" >
-   </form> -->
-   <a href = "{% url 'editpage' title %}"> editpage </a>
-</div>
+<style>
+    #edit { color: purple;
+        font-size: larger;
+        font-weight: bold;
+        text-decoration: none;
+        text-shadow: 2px 2px 5px rgb(168, 168, 168);
 
+    }
+    #edit:hover{
+        text-shadow: 2px 2px 5px gold;
+    }
+    h1{ 
+        color:purple;
+        text-shadow: 2px 2px 5px gold;
+    }
+    textarea{
+    width: 95%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none"
+    }
+</style>
+<div>
+    <div style = 'position:absolute; right: 20px; margin-top: 40px;'>
+        <a id = 'edit' href = "{% url 'editpage' title %}"> Edit page </a>
+     </div>
     <h1>{{title}}</h1>
-    
-    <p>
-        {{content}}
-    </p>
+    <textarea>
+{{content}}
+    </textarea>
+   
+</div>
 {% endblock %}

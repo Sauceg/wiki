@@ -7,8 +7,7 @@ urlpatterns = [
     path("make entry", views.make_entry, name = "make entry"),
     path("editpage/<title>/",views.editpage, name = "editpage"),
     path("randompage", views.random, name = "random page"),
-    path("save new entry", views.save_new_entry, name = 'save_new_entry'),
-    #path('save entry', views.save_entry,name = 'save entry' ),
+    path("save_new_entry/<tit>/", views.save_new_entry, name = 'save_new_entry'),
     path("<str:tit>", views.title, name = "title"),
  
     

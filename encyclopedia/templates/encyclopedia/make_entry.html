@@ -1,16 +1,57 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-    <h1>make an entry </h1>
+    <style>
+        .edit{
+             margin-top: 20px;
+        }
 
-    {% for error in form.errors %}
-    <p class="text-danger">{{ error }}</p>
-    {% endfor %}
+        h4{
+            color:purple;
+            text-shadow: 2px 2px 5px gold;
+        }
+        #sub{color: purple;
+            font-size: larger;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 2px 2px 5px rgb(168, 168, 168);
+            border:0;
+            border-radius: 5px;
+        
+        }
+         #sub:hover{
+            text-shadow: 2px 2px 5px gold;
+         }
+    </style> 
 
     <form method = "POST" action = "make entry">
         {% csrf_token %}
-        {{form}}
-        <input style="width: 150px; background-color: #4d90fe; color: white; margin-left: 670px;" type="submit" value="submit entry" >
+
+        <div class="edit">
+           
+            <h4>
+                Title
+            </h4>
+            {{form.title}}
+            {% if TitleError %}
+            <p style ="color: red;">Entry already Exists</p>
+            {% endif %}
+    
+        
+
+            <div style = 'position:absolute; right: 25px; margin-top: 10px;'>
+                <input id = 'sub' type="submit" value="submit entry" >
+            </div>
+        </div>
+      
+        <div class="edit">
+            <h4>
+                content
+            </h4>
+            {{form.content}}
+        </div>
+       
+       
         
     </form>
    
