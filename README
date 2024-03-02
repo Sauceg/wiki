@@ -1,0 +1,16 @@
+1. **`encyclopedia/urls.py`:** This file contains the URL configuration for the encyclopedia app. It defines the routes that map to specific views within the app. Currently, there's a default route associated with the `views.index` function.
+
+2. **`encyclopedia/util.py`:** This file provides utility functions that interact with encyclopedia entries. Three important functions are defined:
+   - `list_entries()`: Returns a list of the names of all encyclopedia entries.
+   - `save_entry(title, content)`: Saves a new encyclopedia entry given its title and Markdown content.
+   - `get_entry(title)`: Retrieves an encyclopedia entry by its title, returning its Markdown content if it exists, or `None` if it doesn't.
+
+3. **Markdown Files in `entries/` Directory:** Each encyclopedia entry is saved as a Markdown file inside the `entries/` directory. There are pre-created sample entries, and you can add more as needed.
+
+4. **`encyclopedia/views.py`:** This file contains views for the encyclopedia app. Currently, there's only one view:
+   - `index`: This view returns the `encyclopedia/index.html` template, providing it with a list of all entries obtained using `util.list_entries()`.
+
+5. **`encyclopedia/templates/encyclopedia/index.html`:** This HTML template inherits from a base template named `layout.html`. It defines the structure of the index page, including the page title and the unordered list of all encyclopedia entries.
+
+6. **`encyclopedia/templates/layout.html`:** This base template defines the broader structure of the page. It includes a sidebar with a search field (not functional yet), a link to the home page, and links to create a new page or visit a random page (also not functional yet).
+
